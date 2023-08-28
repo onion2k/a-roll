@@ -1,23 +1,43 @@
 import {Composition} from 'remotion';
-import {MyComposition, myCompSchema} from './Composition';
+import { BitMaskTest, BitMaskTestSchema } from './BitMaskTest';
+import { WipeTest, WipeTestSchema } from './WipeTest';
+import { ScrollerTest, ScrollerTestSchema } from './ScrollerTest';
 import './style.css';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Composition
-				id="MyComp"
-				component={MyComposition}
-				durationInFrames={240}
-				fps={30}
+				id="Wipe"
+				component={WipeTest}
+				durationInFrames={600}
+				fps={60}
 				width={1280}
 				height={720}
-				schema={myCompSchema}
+				schema={WipeTestSchema}
 				defaultProps={{
-					titleText: 'Welcome to Remotion with Tailwind CSS',
-					titleColor: '#000000',
-					logoColor: '#00bfff',
+					backgroundClass: 'bg-white'
 				}}
+			/>
+			<Composition
+				id="Mono"
+				component={BitMaskTest}
+				durationInFrames={600}
+				fps={60}
+				width={1280}
+				height={720}
+				schema={BitMaskTestSchema}
+				defaultProps={{}}
+			/>
+			<Composition
+				id="Scroller"
+				component={ScrollerTest}
+				durationInFrames={6000}
+				fps={60}
+				width={1280}
+				height={720}
+				schema={ScrollerTestSchema}
+				defaultProps={{}}
 			/>
 		</>
 	);
