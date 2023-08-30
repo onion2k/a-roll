@@ -1,0 +1,39 @@
+.squares {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  place-items: center;
+}
+
+.squares > span {
+  width: 100%;
+  height: 100%;
+}
+
+.squares > span {
+  /* animation: scale-up 500ms ease-in-out both; */
+  /* animation-delay: calc(100ms * var(--col)); */
+  opacity: 0;
+}
+
+.squares.row > span {
+  /* animation-delay: calc(100ms * var(--row)); */
+}
+
+.squares.tl > span {
+  /* animation-delay: calc(100ms * (var(--row) + var(--col))); */
+}
+
+/* 
+@keyframes scale-up {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+} */
