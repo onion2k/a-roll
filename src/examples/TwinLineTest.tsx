@@ -1,7 +1,7 @@
 import { Sequence } from 'remotion';
 import {z} from 'zod';
 
-import { TwinLine } from './a-roll/text/TwinLine';
+import { TwinLine } from '../a-roll/text/TwinLine';
 
 export const TwinLineTestSchema = z.object({});
 

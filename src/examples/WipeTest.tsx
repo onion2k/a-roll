@@ -1,7 +1,7 @@
 import { Sequence, AbsoluteFill } from 'remotion';
 import {z} from 'zod';
 
-import { Wipe } from './a-roll/wipes/Wipe';
+import { Wipe } from '../a-roll/wipes/Wipe';
 
 export const WipeTestSchema = z.object({
 	backgroundClass: z.string()

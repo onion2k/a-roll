@@ -1,10 +1,11 @@
 import {Folder, Composition} from 'remotion';
-import { BitMaskTest, BitMaskTestSchema } from './BitMaskTest';
-import { WipeTest, WipeTestSchema } from './WipeTest';
-import { ScrollerTest, ScrollerTestSchema } from './ScrollerTest';
+import { BitMaskTest, BitMaskTestSchema } from './examples/BitMaskTest';
+import { WipeTest, WipeTestSchema } from './examples/WipeTest';
+import { ScrollerTest, ScrollerTestSchema } from './examples/ScrollerTest';
+import { TwinLineTest, TwinLineTestSchema } from './examples/TwinLineTest';
+import { SquaresTest, SquaresTestSchema } from './examples/SquaresTest';
+import { ReglTest, ReglTestSchema } from './examples/ReglTest';
 import './style.css';
-import { TwinLineTest, TwinLineTestSchema } from './TwinLineTest';
-import { SquaresTest, SquaresTestSchema } from './SquaresTest';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -37,11 +38,21 @@ export const RemotionRoot: React.FC = () => {
 				<Composition
 					id="Squares"
 					component={SquaresTest}
-					durationInFrames={600}
+					durationInFrames={120}
 					fps={60}
 					width={1280}
 					height={720}
 					schema={SquaresTestSchema}
+					defaultProps={{}}
+				/>
+				<Composition
+					id="Regl"
+					component={ReglTest}
+					durationInFrames={300}
+					fps={60}
+					width={1280}
+					height={720}
+					schema={ReglTestSchema}
 					defaultProps={{}}
 				/>
 			</Folder>

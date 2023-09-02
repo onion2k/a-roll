@@ -1,7 +1,7 @@
 import { Sequence } from 'remotion';
 import {z} from 'zod';
 
-import { Scroller } from './a-roll/text/Scroller';
+import { Scroller } from '../a-roll/text/Scroller';
 
 export const ScrollerTestSchema = z.object({});
 

@@ -1,7 +1,7 @@
 import { Sequence, AbsoluteFill } from 'remotion';
 import {z} from 'zod';
 
-import { BitMask } from './a-roll/effects/BitMask';
+import { BitMask } from '../a-roll/effects/BitMask';
 
 export const BitMaskTestSchema = z.object({
 });
