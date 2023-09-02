@@ -27,6 +27,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "regl": "^2.1.0",
+    "twgl.js": "^5.5.3",
     "zod": "^3.21.4"
   },
   "devDependencies": {

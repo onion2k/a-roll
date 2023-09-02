@@ -1,4 +1,4 @@
-import { Sequence, AbsoluteFill } from 'remotion';
+import { Sequence } from 'remotion';
 import {z} from 'zod';
 import { Regl } from '../a-roll/effects/Regl';
 

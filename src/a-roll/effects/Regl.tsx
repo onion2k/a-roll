@@ -11,6 +11,7 @@ export const Regl = () => {
 
     useEffect(()=>{
       if (el.current) {
+
         const r = regl(el.current);
 
         r.clear({
@@ -50,7 +51,7 @@ export const Regl = () => {
           count: 3
         })()
       }
-    })
+    }, [durationInFrames, frame])
 
     return (
         <AbsoluteFill>
