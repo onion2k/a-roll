@@ -13,6 +13,8 @@ export const Twgl = ({ frag, vert }: z.infer<typeof TwglSchema>) => {
     const frame = useCurrentFrame();
     const { width, height } = useVideoConfig();
 
+    console.log(frag)
+
     const renderGL = (frame: number) => {
 
       if (el.current) {

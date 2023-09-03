@@ -6,6 +6,7 @@ import { TwinLineTest, TwinLineTestSchema } from './examples/TwinLineTest';
 import { SquaresTest, SquaresTestSchema } from './examples/SquaresTest';
 import { ReglTest, ReglTestSchema } from './examples/ReglTest';
 import { TwglTest, TwglTestSchema } from './examples/TwglTest';
+import { TwglTest2 } from './examples/TwglTest2';
 import './style.css';
 
 export const RemotionRoot: React.FC = () => {
@@ -65,6 +66,14 @@ export const RemotionRoot: React.FC = () => {
 					height={720}
 					schema={TwglTestSchema}
 					defaultProps={{}}
+				/>
+				<Composition
+					id="Twgl2"
+					component={TwglTest2}
+					durationInFrames={300}
+					fps={60}
+					width={1280}
+					height={720}
 				/>
 			</Folder>
 			<Folder name="Text">

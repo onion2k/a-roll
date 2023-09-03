@@ -45,7 +45,7 @@ export const TwglTest: React.FC<z.infer<typeof TwglTestSchema>> = () => {
           
           void main(void)
           {
-          gl_FragColor = vec4(vec3(1, 1, 1) * halftone(gl_FragCoord.xy), 1.);
+            gl_FragColor = vec4(vec3(1, 1, 1) * halftone(gl_FragCoord.xy), 1.);
           }`
         }
       />
