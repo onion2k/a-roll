@@ -42,7 +42,7 @@ export const Regl = () => {
               [1, 1]
             ]
           },
-        
+
           uniforms: {
             color: [1, 0, 0, 1],
             time: frame / durationInFrames
