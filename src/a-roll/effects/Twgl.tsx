@@ -1,21 +1,20 @@
 import * as twgl from 'twgl.js';
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { z } from 'zod';
 
 export const TwglSchema = z.object({
   frag: z.string(),
-  vert: z.string()
+  vert: z.string(),
+  style: z.object({}).optional()
 });
 
-export const Twgl = ({ frag, vert }: z.infer<typeof TwglSchema>) => {
+export const Twgl = ({ frag, vert, style }: z.infer<typeof TwglSchema>) => {
     const el = useRef<HTMLCanvasElement>(null);
     const frame = useCurrentFrame();
     const { width, height } = useVideoConfig();
 
-    console.log(frag)
-
-    const renderGL = (frame: number) => {
+    const renderGL = useCallback((frame: number) => {
 
       if (el.current) {
         const gl = el.current.getContext("webgl");
@@ -47,17 +46,17 @@ export const Twgl = ({ frag, vert }: z.infer<typeof TwglSchema>) => {
         }
       }
 
-    };
+    }, [frag, vert]);
 
     useEffect(() => {
       renderGL(frame);
-    }, [frame])
+    }, [renderGL, frame])
 
     renderGL(frame);
 
     return (
-        <AbsoluteFill>
-            <canvas ref={el} width={width} height={height} />
+        <AbsoluteFill >
+            <canvas ref={el} width={width} height={height} style={style} />
         </AbsoluteFill>
     );
 };

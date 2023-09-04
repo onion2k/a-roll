@@ -5,8 +5,11 @@ import { ScrollerTest, ScrollerTestSchema } from './examples/ScrollerTest';
 import { TwinLineTest, TwinLineTestSchema } from './examples/TwinLineTest';
 import { SquaresTest, SquaresTestSchema } from './examples/SquaresTest';
 import { ReglTest, ReglTestSchema } from './examples/ReglTest';
-import { TwglTest, TwglTestSchema } from './examples/TwglTest';
-import { TwglTest2 } from './examples/TwglTest2';
+import { ShaderHalftone, ShaderHalftoneSchema } from './examples/ShaderHalftone';
+import { ShaderSpiral } from './examples/ShaderSpiral';
+import { ShaderPlasma } from './examples/ShaderPlasma';
+import { ShaderFBMLightning } from './examples/ShaderFBMLightning';
+import { ShaderBitMaskTest } from './examples/ShaderBitMaskTest';
 import './style.css';
 
 export const RemotionRoot: React.FC = () => {
@@ -59,18 +62,42 @@ export const RemotionRoot: React.FC = () => {
 				/>
 				<Composition
 					id="Twgl"
-					component={TwglTest}
+					component={ShaderHalftone}
 					durationInFrames={300}
 					fps={60}
 					width={1280}
 					height={720}
-					schema={TwglTestSchema}
+					schema={ShaderHalftoneSchema}
 					defaultProps={{}}
 				/>
 				<Composition
-					id="Twgl2"
-					component={TwglTest2}
+					id="ShaderSpiral"
+					component={ShaderSpiral}
 					durationInFrames={300}
+					fps={60}
+					width={1280}
+					height={720}
+				/>
+				<Composition
+					id="ShaderPlasma"
+					component={ShaderPlasma}
+					durationInFrames={3000}
+					fps={60}
+					width={1280}
+					height={720}
+				/>
+				<Composition
+					id="ShaderFBMLightning"
+					component={ShaderFBMLightning}
+					durationInFrames={3000}
+					fps={60}
+					width={1280}
+					height={720}
+				/>
+				<Composition
+					id="ShaderBitMaskTest"
+					component={ShaderBitMaskTest}
+					durationInFrames={600}
 					fps={60}
 					width={1280}
 					height={720}
