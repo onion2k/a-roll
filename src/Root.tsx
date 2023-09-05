@@ -11,10 +11,19 @@ import { ShaderPlasma } from './examples/ShaderPlasma';
 import { ShaderFBMLightning } from './examples/ShaderFBMLightning';
 import { ShaderBitMaskTest } from './examples/ShaderBitMaskTest';
 import './style.css';
+import { SoundBarsTest } from './examples/SoundBarsTest';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
+				<Composition
+				id="SoundBars"
+				component={SoundBarsTest}
+				durationInFrames={600}
+				fps={60}
+				width={1280}
+				height={720}
+			/>
 			<Folder name="Wipes">
 				<Composition
 				id="ColorWipe"

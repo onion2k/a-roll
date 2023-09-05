@@ -23,6 +23,7 @@
   "dependencies": {
     "@remotion/bundler": "4.0.29",
     "@remotion/gif": "4.0.29",
+    "@remotion/noise": "^4.0.32",
     "@remotion/zod-types": "4.0.29",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
