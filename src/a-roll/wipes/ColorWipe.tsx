@@ -1,8 +1,8 @@
 import { AbsoluteFill, useVideoConfig, useCurrentFrame, interpolate } from 'remotion';
 
-type WipeProps = { backgroundClass: string }
+type ColorWipeProps = { backgroundClass: string }
 
-export const Wipe = ({ backgroundClass='bg-white' }: WipeProps) => {
+export const ColorWipe = ({ backgroundClass='bg-white' }: ColorWipeProps) => {
     const frame = useCurrentFrame();
     const { durationInFrames } = useVideoConfig();
 

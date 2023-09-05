@@ -1,6 +1,6 @@
 import {Folder, Composition} from 'remotion';
 import { BitMaskTest, BitMaskTestSchema } from './examples/BitMaskTest';
-import { WipeTest, WipeTestSchema } from './examples/WipeTest';
+import { ColorWipeTest, ColorWipeTestSchema } from './examples/WipeTest';
 import { ScrollerTest, ScrollerTestSchema } from './examples/ScrollerTest';
 import { TwinLineTest, TwinLineTestSchema } from './examples/TwinLineTest';
 import { SquaresTest, SquaresTestSchema } from './examples/SquaresTest';
@@ -18,12 +18,12 @@ export const RemotionRoot: React.FC = () => {
 			<Folder name="Wipes">
 				<Composition
 				id="Wipe"
-				component={WipeTest}
+				component={ColorWipeTest}
 				durationInFrames={600}
 				fps={60}
 				width={1280}
 				height={720}
-				schema={WipeTestSchema}
+				schema={ColorWipeTestSchema}
 				defaultProps={{
 					backgroundClass: 'bg-white'
 				}}

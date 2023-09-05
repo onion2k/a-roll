@@ -1,25 +1,29 @@
-import { Sequence, AbsoluteFill } from 'remotion';
+import { Sequence, AbsoluteFill, Img, staticFile } from 'remotion';
 import {z} from 'zod';
 
-import { Wipe } from '../a-roll/wipes/Wipe';
+import { ColorWipe } from '../a-roll/wipes/ColorWipe';
 
-export const WipeTestSchema = z.object({
+export const ColorWipeTestSchema = z.object({
 	backgroundClass: z.string()
 });
 
-export const WipeTest: React.FC<z.infer<typeof WipeTestSchema>> = ({
+export const ColorWipeTest: React.FC<z.infer<typeof ColorWipeTestSchema>> = ({
 	backgroundClass
 }) => {
 	return (
 		<Sequence durationInFrames={600}>
 			<Sequence durationInFrames={300} name="out">
-				<AbsoluteFill className="w-full h-full flex items-center justify-center" style={{ backgroundColor: 'rgba(0,255,0)'}} />
+				<AbsoluteFill className="w-full h-full flex items-center justify-center">
+					<Img src={staticFile("scallops_sm.webp")} />
+				</AbsoluteFill>
 			</Sequence>
 			<Sequence durationInFrames={200} from={200} name="transition" className="z-50">
-				<Wipe backgroundClass={backgroundClass} />
+				<ColorWipe backgroundClass={backgroundClass} />
 			</Sequence>
-			<Sequence durationInFrames={300} from={300} name="in">
-				<AbsoluteFill className="w-full h-full flex items-center justify-center" style={{ backgroundColor: 'rgba(255,0,0)'}} />
+			<Sequence durationInFrames={600} from={300}>
+			<AbsoluteFill className="w-full h-full flex items-center justify-center">
+				<Img src={staticFile("oil_sm.webp")} />
+			</AbsoluteFill>
 			</Sequence>
 		</Sequence>
 	);
