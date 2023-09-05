@@ -17,7 +17,7 @@ export const RemotionRoot: React.FC = () => {
 		<>
 			<Folder name="Wipes">
 				<Composition
-				id="Wipe"
+				id="ColorWipe"
 				component={ColorWipeTest}
 				durationInFrames={600}
 				fps={60}
