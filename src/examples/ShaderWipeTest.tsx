@@ -1,11 +1,5 @@
-import { Sequence, AbsoluteFill, staticFile, Img } from 'remotion';
-import { Twgl } from '../a-roll/effects/Twgl';
-
-const vert = `
-attribute vec4 position;
-void main() {
-  gl_Position = position;
-}`
+import { Sequence, staticFile, Img } from 'remotion';
+import { ShaderMask } from '../a-roll/wipes/ShaderMask';
 
 const frag = `
 #ifdef GL_ES
@@ -33,27 +27,16 @@ void main() {
 
 export const ShaderWipeTest: React.FC = () => {
   return (
-    <Sequence durationInFrames={600}>
-      <Sequence durationInFrames={600} name="out">
-        <AbsoluteFill className="w-full h-full flex items-center justify-center" style={{ backgroundColor: 'rgba(0,255,0)' }}>
+    <Sequence durationInFrames={60}>
+      <ShaderMask
+        top={
           <div className="w-full h-full flex items-center justify-flex-start text-5xl text-black"><Img src={staticFile("oil_sm.webp")} /></div>
-          <Twgl
-            vert={vert}
-            frag={frag}
-            style={{ mixBlendMode: 'screen' }}
-          />
-      	</AbsoluteFill>
-      </Sequence>
-      <Sequence durationInFrames={600} name="BitMask Effect">
-        <AbsoluteFill className="w-full h-full flex items-center justify-center" style={{ backgroundColor: 'rgba(255,0,0)', mixBlendMode: 'multiply' }}>
+        }
+        bottom={
           <div className="w-full h-full flex items-center justify-flex-start text-5xl text-black"><Img src={staticFile("scallops_sm.webp")} /></div>
-          <Twgl
-            vert={vert}
-            frag={frag}
-            style={{filter: 'invert(1)' , mixBlendMode: 'screen'}}
-          />
-        </AbsoluteFill>
-      </Sequence>
+        }
+        frag={frag}
+      />
     </Sequence>
   );
 };

@@ -50,7 +50,7 @@ export const RemotionRoot: React.FC = () => {
 				<Composition
 				id="ShaderWipe"
 				component={ShaderWipeTest}
-				durationInFrames={600}
+				durationInFrames={60}
 				fps={60}
 				width={1280}
 				height={720}
