@@ -12,7 +12,7 @@ export const TwglSchema = z.object({
 export const Twgl = ({ frag, vert, style }: z.infer<typeof TwglSchema>) => {
     const el = useRef<HTMLCanvasElement>(null);
     const frame = useCurrentFrame();
-    const { width, height } = useVideoConfig();
+    const { width, height, durationInFrames } = useVideoConfig();
 
     const renderGL = useCallback((frame: number) => {
 
@@ -34,6 +34,7 @@ export const Twgl = ({ frag, vert, style }: z.infer<typeof TwglSchema>) => {
     
           const uniforms = {
             time: frame,
+            maxTime: durationInFrames,
             resolution: [gl.canvas.width, gl.canvas.height],
           };
     

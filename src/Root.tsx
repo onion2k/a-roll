@@ -12,6 +12,8 @@ import { ShaderFBMLightning } from './examples/ShaderFBMLightning';
 import { ShaderBitMaskTest } from './examples/ShaderBitMaskTest';
 import './style.css';
 import { SoundBarsTest } from './examples/SoundBarsTest';
+import { BurnsTest } from './examples/BurnsTest';
+import { ShaderWipeTest } from './examples/ShaderWipeTest';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -24,18 +26,35 @@ export const RemotionRoot: React.FC = () => {
 				width={1280}
 				height={720}
 			/>
-			<Folder name="Wipes">
-				<Composition
-				id="ColorWipe"
-				component={ColorWipeTest}
+			<Composition
+				id="Burns"
+				component={BurnsTest}
 				durationInFrames={600}
 				fps={60}
 				width={1280}
 				height={720}
-				schema={ColorWipeTestSchema}
-				defaultProps={{
-					backgroundClass: 'bg-white'
-				}}
+			/>
+			<Folder name="Wipes">
+				<Composition
+					id="ColorWipe"
+					component={ColorWipeTest}
+					durationInFrames={600}
+					fps={60}
+					width={1280}
+					height={720}
+					schema={ColorWipeTestSchema}
+					defaultProps={{
+						backgroundClass: 'bg-white'
+					}}
+				/>
+				<Composition
+				id="ShaderWipe"
+				component={ShaderWipeTest}
+				durationInFrames={600}
+				fps={60}
+				width={1280}
+				height={720}
+				defaultProps={{}}
 			/>
 			</Folder>
 			<Folder name="Effects">
