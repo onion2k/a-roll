@@ -1,5 +1,7 @@
-import { Sequence, staticFile, Img } from 'remotion';
+import { AbsoluteFill, Sequence } from 'remotion';
 import { ShaderMask } from '../a-roll/wipes/ShaderMask';
+import { Burns } from '../a-roll/Burns';
+import { TwinLine } from '../a-roll/text/TwinLine';
 
 const frag = `
 #ifdef GL_ES
@@ -27,16 +29,32 @@ void main() {
 
 export const ShaderWipeTest: React.FC = () => {
   return (
-    <Sequence durationInFrames={60}>
+    <>
+    <Sequence durationInFrames={240}>
+      <Burns className="h-full w-full grid grid-cols-[repeat(16,_1fr)] text-white" totalFrames={360} offsetFrame={0}>
+        { Array(16 * 8).fill(undefined).map((v, i) => (<div className={`${(i + (Math.floor(i / 16))) % 2 === 0 ? 'bg-white' : 'bg-black'}`}>{i}</div>)) }
+      </Burns>
+    </Sequence>
+    <Sequence durationInFrames={120} from={240}>
       <ShaderMask
         top={
-          <div className="w-full h-full flex items-center justify-flex-start text-5xl text-black"><Img src={staticFile("oil_sm.webp")} /></div>
+          <Burns className="h-full w-full grid grid-cols-[repeat(16,_1fr)] text-white" totalFrames={360} offsetFrame={240}>
+            { Array(16 * 8).fill(undefined).map((v, i) => (<div className={`${(i + (Math.floor(i / 16))) % 2 === 0 ? 'bg-white' : 'bg-black'}`}>{i}</div>)) }
+          </Burns>
         }
         bottom={
-          <div className="w-full h-full flex items-center justify-flex-start text-5xl text-black"><Img src={staticFile("scallops_sm.webp")} /></div>
+          <AbsoluteFill style={{ backgroundColor: 'pink' }}>
+            <TwinLine textTop="Hello World" textBottom="Goodbye World" angle={-15} totalFrames={360} offsetFrame={0} />
+          </AbsoluteFill>
         }
         frag={frag}
       />
     </Sequence>
+    <Sequence durationInFrames={240} from={360}>
+      <AbsoluteFill style={{ backgroundColor: 'pink' }}>
+        <TwinLine textTop="Hello World" textBottom="Goodbye World" angle={-15} totalFrames={360} offsetFrame={120} />
+      </AbsoluteFill>
+    </Sequence>
+    </>
   );
 };

@@ -14,6 +14,7 @@ import './style.css';
 import { SoundBarsTest } from './examples/SoundBarsTest';
 import { BurnsTest } from './examples/BurnsTest';
 import { ShaderWipeTest } from './examples/ShaderWipeTest';
+import { LetterPopTest } from './examples/LetterPopTest';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -50,7 +51,7 @@ export const RemotionRoot: React.FC = () => {
 				<Composition
 				id="ShaderWipe"
 				component={ShaderWipeTest}
-				durationInFrames={60}
+				durationInFrames={600}
 				fps={60}
 				width={1280}
 				height={720}
@@ -151,6 +152,14 @@ export const RemotionRoot: React.FC = () => {
 				height={720}
 				schema={TwinLineTestSchema}
 				defaultProps={{}}
+			/>
+			<Composition
+				id="LetterPop"
+				component={LetterPopTest}
+				durationInFrames={600}
+				fps={60}
+				width={1280}
+				height={720}
 			/>
 			</Folder>
 		</>

@@ -14,13 +14,13 @@ export const ShaderMask = ({ frag, top, bottom }: ShaderMaskProps) => {
     return (
       <>
         <Sequence durationInFrames={durationInFrames} name="out">
-          <AbsoluteFill className="w-full h-full flex items-center justify-center" style={{ backgroundColor: 'rgba(0,255,0)' }}>
+          <AbsoluteFill className="w-full h-full flex items-center justify-center" style={{  }}>
             { bottom }
             <Twgl frag={frag} vert={vert} style={{ mixBlendMode: 'screen' }} />
           </AbsoluteFill>
         </Sequence>
         <Sequence durationInFrames={durationInFrames} name="BitMask Effect">
-          <AbsoluteFill className="w-full h-full flex items-center justify-center" style={{ backgroundColor: 'rgba(255,0,0)', mixBlendMode: 'multiply' }}>
+          <AbsoluteFill className="w-full h-full flex items-center justify-center" style={{ mixBlendMode: 'multiply' }}>
             { top }
             <Twgl frag={frag} vert={vert} style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
           </AbsoluteFill>

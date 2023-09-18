@@ -7,8 +7,8 @@ export const TwinLineTestSchema = z.object({});
 
 export const TwinLineTest: React.FC<z.infer<typeof TwinLineTestSchema>> = () => {
 	return (
-		<Sequence durationInFrames={6000}>
-      <TwinLine textTop="Hello World" textBottom="Goodbye World" angle={-15} />
+		<Sequence durationInFrames={480}>
+      <TwinLine textTop="Hello World" textBottom="Goodbye World" angle={-15} totalFrames={480} offsetFrame={0} />
 		</Sequence>
 	);
 };
